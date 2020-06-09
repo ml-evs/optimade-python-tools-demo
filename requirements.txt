@@ -1,0 +1,2 @@
+optimade>=0.8
+rise>=5.6.1

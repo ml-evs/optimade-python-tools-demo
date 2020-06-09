@@ -1,0 +1,37 @@
+.spinner {
+  width: 200px;
+  height: 200px;
+  animation: spin 10s linear 1, spin 2s linear 10s 5, spin 0.5s linear 20s infinite;
+
+}
+
+.mover {
+  width: 200px;
+  height: 200px;
+  animation: mover 5s linear 1 forward
+}
+
+.move_box {
+  width: 800px;
+  height: 200px;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes mover {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+body.rise-enabled div.inner_cell>div.text_cell_render.rendered_html {
+    font-size: 75%;
+}
+
+div.inner_cell>div.text_cell_render.rendered_html>pre>code {
+    font-size: 70%;
+    line-height: 1em;
+}

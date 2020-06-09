@@ -1,0 +1,28 @@
+[
+  {
+    "dimension_types": [1, 1, 1],
+    "elements": ["Ac"],
+    "elements_ratios": [1.0],
+    "formula_anonymous": "A",
+    "last_modified": {"$date": "2019-06-08T05:13:37.331Z"},
+    "lattice_vectors": [
+        [1.2503264826932692, 0.0, 0.0],
+        [0.0, 9.8885097163217651, 0.0],
+        [0.0, 0.0, 10.972637673241818]
+    ],
+    "nelements": 1,
+    "pretty_formula": "Ac",
+    "species": [{"chemical_symbols": ["Ac"], "concentration": [1.0], "name": "Ac"}],
+    "species_at_sites": ["Ac"],
+    "relationships": {"references": {"data": [{"type": "references", "id": "dijkstra1968"}]}},
+    "structure_features": [],
+    "num_atoms": 1,
+    "positions_cart": [[0.0, 1.0, 2.0]],
+    "chemsys": "Ac",
+    "task_id": "mpf_1",
+    "band_gap": 1.23,
+    "_id": {
+      "$oid": "5cfb441f053b174410700d02"
+    }
+  }
+]
