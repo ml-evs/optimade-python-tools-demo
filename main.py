@@ -94,6 +94,21 @@ app.include_router(landing.router)
 app.include_router(landing.router, prefix=BASE_URL_PREFIXES["major"])
 
 
+def add_optional_versioned_base_urls(app: FastAPI):
+    """Add the following OPTIONAL prefixes/base URLs to server:
+    ```
+        /vMajor.Minor
+        /vMajor.Minor.Patch
+    ```
+    """
+    for version in ("minor", "patch"):
+        app.include_router(info.router, prefix=BASE_URL_PREFIXES[version])
+        app.include_router(links.router, prefix=BASE_URL_PREFIXES[version])
+        app.include_router(references.router, prefix=BASE_URL_PREFIXES[version])
+        app.include_router(structures.router, prefix=BASE_URL_PREFIXES[version])
+        app.include_router(landing.router, prefix=BASE_URL_PREFIXES[version])
+
+
 def update_schema(app: FastAPI):
     """Update OpenAPI schema in file 'local_openapi.json'"""
     package_root = Path(__file__).parent.parent.parent.resolve()
@@ -107,3 +122,5 @@ def update_schema(app: FastAPI):
 async def startup_event():
     # Update OpenAPI schema on versioned base URL `/vMAJOR`
     update_schema(app)
+    # Add API endpoints for OPTIONAL base URLs `/vMAJOR.MINOR` and `/vMAJOR.MINOR.PATCH`
+    add_optional_versioned_base_urls(app)
