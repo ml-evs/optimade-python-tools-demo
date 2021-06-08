@@ -1,6 +1,7 @@
 [
   {
     "dimension_types": [1, 1, 1],
+    "nperiodic_dimensions": 3,
     "elements": ["Ac"],
     "elements_ratios": [1.0],
     "formula_anonymous": "A",
